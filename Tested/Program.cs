@@ -12,7 +12,6 @@ namespace Tested
         {
             int[] nums = {};
             int result = GetBiggestNumber(nums);
-            Console.WriteLine(result);
             Console.ReadKey();
         }
 
