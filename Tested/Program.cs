@@ -10,19 +10,32 @@ namespace Tested
     {
         static void Main(string[] args)
         {
-            int[] nums = {4,4,1,1,1,1,1,2,2,2,2 };
+            int[] nums = {};
             int result = GetBiggestNumber(nums);
+            Console.WriteLine(result);
             Console.ReadKey();
         }
 
         static int GetBiggestNumber(int[] nums)
         {
+            if (nums == null)
+            {
+                Console.WriteLine("Введены не верные данные");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            if (nums.Length <= 0)
+            {
+                Console.WriteLine("Отсутствуют элементы в массиве");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
             int counter = 0; // переменная фиксирует наибольшее количество одинаковых элементов.
             int bigOneNumber = 0; // переменная обозначает значание элемента, который больше всех встечается в массиве
-
             for (int a = 0; a < nums.Length; ++a)
             {
-                int clones = 0; // переменная обозначает количество одинаковых элементов. 
+                int clones = 1; // переменная обозначает количество одинаковых элементов. 
                 for (int b = 0; b < nums.Length; ++b)
                 {
 
