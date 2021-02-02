@@ -10,35 +10,35 @@ namespace Tested
     {
         static void Main(string[] args)
         {
-            int[] nums = { 4, 7, 2, 4, 3, 5, 1, 0, 1, 1, 8,1 };
-            FindBigOne(nums);
+            int[] nums = {4,4,1,1,1,1,1,2,2,2,2 };
+            int result = GetBiggestNumber(nums);
             Console.ReadKey();
         }
 
-        static void FindBigOne(int[] method)
+        static int GetBiggestNumber(int[] nums)
         {
-            int counter = 0;
-            int result = 0;
+            int counter = 0; // переменная фиксирует наибольшее количество одинаковых элементов.
+            int bigOneNumber = 0; // переменная обозначает значание элемента, который больше всех встечается в массиве
 
-            for (int a = 0; a < method.Length; ++a)
+            for (int a = 0; a < nums.Length; ++a)
             {
-                int clones = 0;
-
-                for (int b = 0; b < method.Length; ++b)
+                int clones = 0; // переменная обозначает количество одинаковых элементов. 
+                for (int b = 0; b < nums.Length; ++b)
                 {
 
-                    if ((method[a] == method[b]) && a != b)
+                    if ((nums[a] == nums[b]) && a != b)
                     {
                         ++clones;
                     }
 
-                    if (clones > counter)
-                    {
-                        result = a;
-                    }
+                }
+                if (clones > counter)
+                {
+                    bigOneNumber = nums[a];
+                    counter = clones;
                 }
             }
-            Console.WriteLine($"{method[result]}");
+            return bigOneNumber;
         }
     }
 }
