@@ -10,41 +10,75 @@ namespace PlusAndMinusElements
     {
         static void Main(string[] args)
         {
-            int[] nums = { 4, -5, -7, 2, 3 };
+            int[] nums = { -1, 1 };
             methods(nums);
             Console.ReadKey();
         }
 
         static void methods(int[] nums)
         {
-            int plusArraySize = 3; // переменная отражает количество положительных элементов, в заложенном массиве.
-            int minusArraySize = 2; // // переменная отражает количество отрицательных элементов, в заложенном массиве.
-            int[] plusnumbers = new int [plusArraySize]; // массив с положительными элементами
-            int[] minusnumbers= new int [minusArraySize]; // массив с отрицательными элементами
-            int alpha = 0; // переменная, дающая  номер положительному элементу
-            int omega = 0; // переменная, дающая  номер отрицательному элементу
+            if (nums == null)
+            {
+                Console.WriteLine("Введены не верные данные");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            else if (nums.Length <= 0)
+            {
+                Console.WriteLine("Введены не верные данные");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            foreach (int g in nums)
+            {
+                if (g == 0)
+                {
+                    Console.WriteLine("Введены не верные данные. 0 - ни отрицательное, ни положительное число");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
+            }
+            int positiveElement = 0; // переменная отражает количество положительных элементов, в заложенном массиве.
+            int negativeElement = 0;  // переменная отражает количество отрицательных элементов, в заложенном массиве.
+
+            for (int b = 0; b < nums.Length; ++b)
+            {
+                if (nums[b] > 0)
+                {
+                    ++positiveElement;
+                }
+
+                else if (nums[b] < 0)
+                {
+                    ++negativeElement;
+                }
+            }
+            int[] plusNumbers = new int[positiveElement]; // массив с положительными элементами
+            int[] minusNumbers = new int[negativeElement]; // массив с отрицательными элементами
+            int positiveCounter = 0; // переменная, дающая  номер положительному элементу
+            int negativeCounter = 0; // переменная, дающая  номер отрицательному элементу
 
             for (int a = 0; a < nums.Length; ++a)
             {
                 if (nums[a] < 0)
                 {
-                    minusnumbers[omega] = nums[a];
-                    ++omega;
+                    minusNumbers[negativeCounter] = nums[a];
+                    ++negativeCounter;
                 }
 
                 else if (nums[a] > 0)
                 {
-                    plusnumbers[alpha] = nums[a];
-                    ++alpha;
+                    plusNumbers[positiveCounter] = nums[a];
+                    ++positiveCounter;
                 }
             }
             Console.Write("[");
 
-            for (int c = 0; c < plusnumbers.Length; ++c)
+            for (int c = 0; c < plusNumbers.Length; ++c)
             {
-                Console.Write($"{plusnumbers[c]}");
+                Console.Write($"{plusNumbers[c]}");
 
-                if (c < plusnumbers.Length-1)
+                if (c < plusNumbers.Length - 1)
                 {
                     Console.Write(",");
                 }
@@ -52,11 +86,11 @@ namespace PlusAndMinusElements
             Console.Write("] \n");
             Console.Write("[");
 
-            for (int e = 0; e < minusnumbers.Length; ++e)
+            for (int e = 0; e < minusNumbers.Length; ++e)
             {
-                Console.Write($"{minusnumbers[e]}");
+                Console.Write($"{minusNumbers[e]}");
 
-                if (e < minusnumbers.Length - 1)
+                if (e < minusNumbers.Length - 1)
                 {
                     Console.Write(",");
                 }
