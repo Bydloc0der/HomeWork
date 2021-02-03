@@ -15,37 +15,53 @@ namespace PlusAndMinusElements
             Console.ReadKey();
         }
 
-        static void methods(int[] plus)
+        static void methods(int[] nums)
         {
-            int[] plusnumbers = { };
-            int[] minusnumbers= { };
-            int alpha = 0;
-            int omega = 0;
+            int plusArraySize = 3; // переменная отражает количество положительных элементов, в заложенном массиве.
+            int minusArraySize = 2; // // переменная отражает количество отрицательных элементов, в заложенном массиве.
+            int[] plusnumbers = new int [plusArraySize]; // массив с положительными элементами
+            int[] minusnumbers= new int [minusArraySize]; // массив с отрицательными элементами
+            int alpha = 0; // переменная, дающая  номер положительному элементу
+            int omega = 0; // переменная, дающая  номер отрицательному элементу
 
-            for (int a = 0; a < plus.Length; ++a)
+            for (int a = 0; a < nums.Length; ++a)
             {
-                if (plus[a] < 0)
+                if (nums[a] < 0)
                 {
-                    plusnumbers[omega] = plus[a];
+                    minusnumbers[omega] = nums[a];
                     ++omega;
                 }
 
-                else if (plus[a] > 0)
+                else if (nums[a] > 0)
                 {
-                    minusnumbers[alpha] = plus[a];
+                    plusnumbers[alpha] = nums[a];
                     ++alpha;
                 }
             }
+            Console.Write("[");
 
-            foreach (int c in plusnumbers)
+            for (int c = 0; c < plusnumbers.Length; ++c)
             {
-                Console.WriteLine(plusnumbers[c]);
-            }
+                Console.Write($"{plusnumbers[c]}");
 
-            foreach (int b in minusnumbers)
-            {
-                Console.WriteLine(minusnumbers[b]);
+                if (c < plusnumbers.Length-1)
+                {
+                    Console.Write(",");
+                }
             }
+            Console.Write("] \n");
+            Console.Write("[");
+
+            for (int e = 0; e < minusnumbers.Length; ++e)
+            {
+                Console.Write($"{minusnumbers[e]}");
+
+                if (e < minusnumbers.Length - 1)
+                {
+                    Console.Write(",");
+                }
+            }
+            Console.Write("]");
         }
     }
 }
