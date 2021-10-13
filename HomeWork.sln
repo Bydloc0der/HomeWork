@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tested", "Tested\Tested.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusAndMinusElements", "PlusAndMinusElements\PlusAndMinusElements.csproj", "{70A84083-3086-493A-B744-C923DB12EBD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListOfThreeHundredNumbers", "ListOfThreeHundredNumbers\ListOfThreeHundredNumbers.csproj", "{6B0D8015-520C-443D-A6A0-BB619AE01A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{70A84083-3086-493A-B744-C923DB12EBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A84083-3086-493A-B744-C923DB12EBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A84083-3086-493A-B744-C923DB12EBD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B0D8015-520C-443D-A6A0-BB619AE01A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0D8015-520C-443D-A6A0-BB619AE01A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0D8015-520C-443D-A6A0-BB619AE01A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0D8015-520C-443D-A6A0-BB619AE01A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
